@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CucumberPrjct" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="stepdefs.TestRunner" time="66.444">
+    <testsuite name="This feature will be used to login into Simplilearn Website" time="66.444">
+      <testcase name="Validate Login success scenario" classname="This feature will be used to login into Simplilearn Website" time="38.325"/>
+      <testcase name="Validate the other login options on the screen" classname="This feature will be used to login into Simplilearn Website" time="28.117"/>
+    </testsuite>
+  </testsuite>
+</testrun>

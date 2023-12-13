@@ -1,0 +1,118 @@
+package stepDefs;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import junit.framework.Assert;
+
+
+public class BuyProductStepDefs {
+	
+	WebDriver driver = BaseClass.driver;
+	
+	@Given("I have launched the application")
+	public void i_have_launched_the_application() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.get("https://www.pizzahut.co.in/");
+	}
+
+	@When("I enter the location as {string}")
+	public void i_enter_the_location_as(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+		WebElement UserName = driver.findElement(By.name("Enter your location for delivery"));
+		UserName.sendKeys("Pune Railway Station");
+	}
+
+	@When("I select the very first suggestion from the list")
+	public void i_select_the_very_first_suggestion_from_the_list() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I should land on the Deals page")
+	public void i_should_land_on_the_Deals_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I select the tab as {string}")
+	public void i_select_the_tab_as(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I select the pizza as {string}")
+	public void i_select_the_pizza_as(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I should see the pizza is added to the cart")
+	public void i_should_see_the_pizza_is_added_to_the_cart() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I click on the Checkout button")
+	public void i_click_on_the_Checkout_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I should be landed on the secured checkout page")
+	public void i_should_be_landed_on_the_secured_checkout_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I enter the personal details")
+	public void i_enter_the_personal_details(io.cucumber.datatable.DataTable dataTable) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I enter the address details")
+	public void i_enter_the_address_details(io.cucumber.datatable.DataTable dataTable) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I should see three payment options")
+	public void i_should_see_three_payment_options(io.cucumber.datatable.DataTable dataTable) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I select the payment option as {string}")
+	public void i_select_the_payment_option_as(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+ 
+	
+}

@@ -1,0 +1,14 @@
+package stepDefs;
+
+
+
+public class BuyProductStepDefs {
+	WebDriver driver = BaseClass.driver;
+	
+	@Given("I have launched the application")
+	public void i_have_launched_the_application() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.get("https://www.pizzahut.co.in/");
+	}
+
+	
