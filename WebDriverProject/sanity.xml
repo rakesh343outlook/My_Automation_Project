@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Sanity Suite">
+  <test thread-count="5" name="Test">
+  
+    <groups>
+  	<run>
+  		<include name="sanity"/>
+  	</run>
+  </groups>
+  
+    <classes>
+      <class name="testng.CardTest"/>
+      <class name="testng.LoanTest">
+      	</class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
