@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.But;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -91,10 +93,24 @@ public class BuyProductStepDefs {
 	@Then("I should be landed on the secured checkout page")
 	public void i_should_be_landed_on_the_secured_checkout_page() {
 	    // Write code here that turns the phrase above into concrete actions
-		WebElement Secure = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/h2/span/span"));
+		WebElement Secure = driver.findElement(By.xpath("//span[text()='Secure Checkout']"));
 		Assert.assertTrue(Secure.isDisplayed());  
 	}
 
+	/*
+	@And("I enter the personal details")
+	public void i_enter_the_personal_details(DataTable persdetails) {
+
+		for(int i=0;i<persdetails.height();i++)
+		{
+			//dynamic element finding and input
+			WebElement PersDetail1 = driver.findElement(By.name(persdetails.cell(i,0)));
+			PersDetail1.sendKeys(persdetails.cell(i,1));
+		}	
+			
+		}	
+	*/
+	
 	@Then("I enter the personal details")
 	public void i_enter_the_personal_details(io.cucumber.datatable.DataTable dataTable) {
 	    // Write code here that turns the phrase above into concrete actions
@@ -108,35 +124,42 @@ public class BuyProductStepDefs {
 		Email.sendKeys("abc@xyz.com");
 	}
 
+
+
 	@Then("I enter the address details")
 	public void i_enter_the_address_details(io.cucumber.datatable.DataTable dataTable) {
 	    // Write code here that turns the phrase above into concrete actions
 		WebElement Address = driver.findElement(By.xpath("//*[@id=\"checkout__deliveryAddress.interior\"]"));
 		Address.sendKeys("123 Main Street, Some Landmark"); 
 	}
+ 
 
 	@Then("I should see three payment options")
-	public void i_should_see_three_payment_options(io.cucumber.datatable.DataTable dataTable) {
-	    // Write code here that turns the phrase above into concrete actions
+	public void i_should_see_three_payment_options(List<String> PaymentOptions) {
 		
-		WebElement OnlinePayment = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/h2/span/span"));
-		Assert.assertTrue(OnlinePayment.isDisplayed()); 
+		for(String value:PaymentOptions) 
+		{
+			//dynamic element find and check whether present or not
+			WebElement PaymentOption = driver.findElement(By.xpath("//span[text()='"+value+"']"));
+			PaymentOption.isDisplayed();	
+		}	
 		
-		WebElement Paytm = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/h2/span/span"));
-		Assert.assertTrue(Paytm.isDisplayed()); 
-		WebElement Cash = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/h2/span/span"));
-		Assert.assertTrue(Cash.isDisplayed()); 
-		
-		WebElement Cash1 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/h2/span/span"));
-		Cash1.click();
-	}   
+	}
 
-	@Then("I select the payment option as {string}")
+	@But("I select the payment option as {string}")
+	public void i_select_the_payment_option_as(String PaymentCash) {
+	    
+		WebElement CashpaymentOption = driver.findElement(By.xpath("//span[text()='Cash']/preceding::i[2]"));
+		CashpaymentOption.click();
+	
+	}
+	/*@Then("I select the payment option as {string}")
 	public void i_select_the_payment_option_as(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 		WebElement PlaceOrder = driver.findElement(By.xpath("//*[@id=\"submit-checkout\"]/span/span[1]"));
 		PlaceOrder.click();
 	}
- 
+ */
 	
-}
+		
+	}
