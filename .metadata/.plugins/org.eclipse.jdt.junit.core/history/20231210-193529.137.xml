@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="CucumberPrjct" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="stepdefs.TestRunner" time="80.628">
-    <testsuite name="This feature will be used to login into Simplilearn Website" time="80.628">
-      <testcase name="Validate Login success scenario" classname="This feature will be used to login into Simplilearn Website" time="16.539"/>
-      <testcase name="Validate Login failiure scenario using data parameters" classname="This feature will be used to login into Simplilearn Website" time="34.244"/>
-      <testcase name="Validate the other login options on the screen" classname="This feature will be used to login into Simplilearn Website" time="29.844"/>
-    </testsuite>
-  </testsuite>
-</testrun>
